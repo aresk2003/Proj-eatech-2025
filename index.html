@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntas Frequentes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <!--As (div) são as perguntas e respostas-->
+         <!--(Button) é o titulo da pergunta e o (p) é a resposta-->
+    <div class="faq-container">
+        <h1>Perguntas Frequentes</h1>
+        <div class="faq-item">
+            <button class="faq-question">O que é o EAtech Conference? </button>
+            <div class="faq-answer">
+                <p>O EAtech Conference é o principal evento anual da rede, reunindo profissionais renomados do setor de TI para discutir inovações tecnológicas, networking e compartilhar cases de sucesso.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Qual é o tema da edição de 2025?</button>
+            <div class="faq-answer">
+                <p>O tema é "Cognitive Evolution", abordando o futuro da inteligência artificial (IA) e sua integração em soluções unificadas para otimizar o desempenho empresarial.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Quando e onde será o evento?</button>
+            <div class="faq-answer">
+                <p>- Data: 12 a 15 de março de 2025.<br> 
+                    - Local: SERHS Natal Grand Hotel & Resort, Natal - RN.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Quais são os destaques da programação?</button>
+            <div class="faq-answer">
+                <p>
+                    - Palestras com especialistas.<br>                                                                                                                                                                                                                                                                                                             
+                    - Painéis de discussão.<br> 
+                    - Salas de laboratório para demonstrações práticas.<br> 
+                    - Reuniões one-to-one.<br> 
+                    - Festa de encerramento.</p>
+            </div>
+        </div>
+            <div class="faq-item">
+                <button class="faq-question">O que inclui o pacote do evento?</button>
+                <div class="faq-answer">
+                    <p>- Translado entre o aeroporto e o hotel.<br>
+                        - Welcome kit personalizado.<br>
+                        - Acesso a todas as atividades do evento.</p>
+                </div>
+            </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">As passagens aéreas estão incluídas no pacote?</button>
+                    <div class="faq-answer">
+                        <p>Não, as passagens aéreas devem ser providenciadas pelos participantes.</p>
+                    </div>
+                </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Haverá espaço para demonstrações práticas?</button>
+                        <div class="faq-answer">
+                            <p>Sim, teremos Salas de Laboratório dedicadas a experimentações tecnológicas.</p>
+                        </div>
+                    </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Tenho dúvidas, como posso entrar em contato? </button>
+                            <div class="faq-answer">
+                                <p>Entre em contato pelo e-mail: marketing@eatech.net.br </p>
+                            </div>
+    </div>
+
+     <!--(Script está fazendo uma função que toda vez que clicar em uma pergunta ele fecha a aberta)-->
+    <script>
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach((question, index) => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const otherAnswers = document.querySelectorAll('.faq-answer');
+                otherAnswers.forEach((otherAnswer, i) => {
+                    if (i !== index) {
+                        otherAnswer.classList.remove('active');
+                    }
+                });
+                answer.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
